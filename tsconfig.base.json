@@ -1,0 +1,10 @@
+{
+  "include": [
+    "src/**/*.d.ts",
+    "src/**/*.js",
+    "src/**/*.ts",
+  ],
+  "compilerOptions": {
+    "noEmit": true,
+  }
+}
