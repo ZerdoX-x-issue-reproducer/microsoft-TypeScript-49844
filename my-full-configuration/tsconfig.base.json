@@ -1,0 +1,42 @@
+{
+  "include": [
+    "src/**/*.d.ts",
+    "src/**/*.js",
+    "src/**/*.ts",
+    "src/**/*.svelte",
+    "src/**/*.yml",
+    "src/**/*.graphql"
+  ],
+  "compilerOptions": {
+    "noEmit": true,
+    "resolveJsonModule": true,
+    "skipLibCheck": true,
+    "forceConsistentCasingInFileNames": true,
+    "strict": true,
+    "paths": {
+      "$auth/": ["src/auth"],
+      "$auth/*": ["src/auth/*"],
+      "$connection/": ["src/connection"],
+      "$connection/*": ["src/connection/*"],
+      "$global/": ["src/global"],
+      "$global/*": ["src/global/*"],
+      "$i18n/": ["src/i18n"],
+      "$i18n/*": ["src/i18n/*"],
+      "$lib": ["src/lib"],
+      "$lib/*": ["src/lib/*"],
+      "$modules/": ["src/modules"],
+      "$modules/*": ["src/modules/*"],
+      "$pages/": ["src/pages"],
+      "$pages/*": ["src/pages/*"],
+      "$plugins/": ["src/plugins"],
+      "$plugins/*": ["src/plugins/*"],
+      "$routes/": ["src/routes"],
+      "$routes/*": ["src/routes/*"],
+      "env": ["src/env.ts"],
+      "gql-types": ["src/gql-types-generated.ts"],
+      "apollo-fields-policies-types": [
+        "./src/apollo-fields-policies-types-generated.ts"
+      ]
+    }
+  }
+}

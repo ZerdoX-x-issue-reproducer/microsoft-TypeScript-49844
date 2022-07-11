@@ -1,0 +1,68 @@
+{
+  "extends": "./.svelte-kit/tsconfig.json",
+  "exclude": [
+    "src/**/*.test.ts",
+    "src/**/__tests__/*",
+    "src/**/__utils__/*",
+    "src/**/__mocks__/*",
+    "src/jest-setup.ts"
+  ],
+  "references": [{ "path": "./tsconfig.test.json" }],
+  "compilerOptions": {
+    "allowJs": true,
+    "checkJs": true,
+    "esModuleInterop": true,
+    "sourceMap": true,
+    "plugins": [{ "name": "vite-plugin-iso-import" }],
+    /*
+     * redefining defaults from ./svelte-kit/tsconfig.json due to svelte-apollo
+     * (it's not bundling because of react deps in apollo). it's highly
+     * recommended to remove these lines when svelte-apollo will be dropped
+     */
+    "importsNotUsedAsValues": "remove",
+    "preserveValueImports": false,
+    /*
+     * https://github.com/microsoft/TypeScript/issues/29118 all lines below (to
+     * the end of the file) below are dublicated from tsconfig.base.json: (due
+     * to inability to include it into "extends" propetry, see the issue)
+     */
+    "noEmit": true,
+    "resolveJsonModule": true,
+    "skipLibCheck": true,
+    "forceConsistentCasingInFileNames": true,
+    "strict": true,
+    "paths": {
+      "$auth/": ["src/auth"],
+      "$auth/*": ["src/auth/*"],
+      "$connection/": ["src/connection"],
+      "$connection/*": ["src/connection/*"],
+      "$global/": ["src/global"],
+      "$global/*": ["src/global/*"],
+      "$i18n/": ["src/i18n"],
+      "$i18n/*": ["src/i18n/*"],
+      "$lib": ["src/lib"],
+      "$lib/*": ["src/lib/*"],
+      "$modules/": ["src/modules"],
+      "$modules/*": ["src/modules/*"],
+      "$pages/": ["src/pages"],
+      "$pages/*": ["src/pages/*"],
+      "$plugins/": ["src/plugins"],
+      "$plugins/*": ["src/plugins/*"],
+      "$routes/": ["src/routes"],
+      "$routes/*": ["src/routes/*"],
+      "env": ["src/env.ts"],
+      "gql-types": ["src/gql-types-generated.ts"],
+      "apollo-fields-policies-types": [
+        "./src/apollo-fields-policies-types-generated.ts"
+      ]
+    }
+  },
+  "include": [
+    "src/**/*.d.ts",
+    "src/**/*.js",
+    "src/**/*.ts",
+    "src/**/*.svelte",
+    "src/**/*.yml",
+    "src/**/*.graphql"
+  ]
+}
